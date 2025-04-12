@@ -1,0 +1,38 @@
+# GPU Manager Configuration Template
+
+logging:
+  level: info
+  file: /var/log/gpu-manager/gpu-manager.log
+  max_size_mb: 10
+  backup_count: 5
+
+monitoring:
+  interval_seconds: 5
+  metrics_port: 9090
+
+pcie:
+  optimize: true
+  settings:
+    link_speed: auto
+    pcie_gen: 4
+    max_link_width: 16
+
+gpu_settings:
+  persistence_mode: enabled
+  accounting_mode: enabled
+  compute_mode: default
+  auto_boost: enabled
+
+alerts:
+  temperature_threshold_celsius: 85
+  memory_threshold_percent: 90
+  power_threshold_percent: 95
+  alert_destination_email: admin@example.com
+
+api:
+  enabled: true
+  port: 8000
+  auth_required: true
+  allowed_ips:
+    - 127.0.0.1
+    - 192.168.0.0/24

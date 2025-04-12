@@ -1,0 +1,39 @@
+# Build directories and files
+build/iso/
+build/mnt/
+build/squashfs/
+build/chroot/
+
+# Large ISO files
+*.iso
+downloads/*.iso
+
+# Generated files
+*.md5
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
