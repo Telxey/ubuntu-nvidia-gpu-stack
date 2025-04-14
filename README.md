@@ -46,6 +46,29 @@ sudo /usr/local/bin/gpu-manager/optimize-gpu-performance.sh
 
 Access the Filebrowser at `http://your-server-ip:8080`
 
+### GPU
+● All GPU manager services are running properly:
+
+  1. GPU Manager Services:
+    - gpu-manager.service - Active ✓
+    - gpu-activator.service - Active ✓
+    - force-gpu-speed.service - Active ✓
+    - nvidia-persistenced - Active ✓
+  2. Log Files:
+    - Active logs at /var/log/gpu-manager/
+    - Recent entries showing GPU activation and PCIe optimization
+  3. Python Environment:
+    - Located at /opt/gpu-manager/venv/ (not at /opt/gpu-manager-venv)
+    - Running the GPU management scripts
+  4. GPU Management Scripts:
+    - Located at /usr/local/bin/gpu-manager/
+    - Both continuous_gpu_activator.py and pcie_analyzer_updated.py are running
+  5. Configuration:
+    - Config at /etc/gpu-manager/config.yaml
+
+  All services are functioning correctly, keeping your GPUs optimized with PCIe Gen 4 settings and
+   persistent mode.
+
 ## Documentation
 
 For detailed information about the stack, see [docs/custom-ubuntu-nvidia-gpu-stack.md](docs/custom-ubuntu-nvidia-gpu-stack.md)
