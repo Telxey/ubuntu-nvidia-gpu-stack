@@ -55,6 +55,12 @@ create_test_directory() {
     mkdir -p "${TEST_DIR}"
     chown -R $SUDO_USER:$SUDO_USER "${TEST_DIR}"
     
+    # Copy the README file if it exists in the script directory
+    if [ -f "$(dirname "$0")/gpu-test-readme.md" ]; then
+        cp "$(dirname "$0")/gpu-test-readme.md" "${TEST_DIR}/README.md"
+        chown $SUDO_USER:$SUDO_USER "${TEST_DIR}/README.md"
+    fi
+    
     success "Test directory created at ${TEST_DIR}"
     
     # Return the test directory path for later use

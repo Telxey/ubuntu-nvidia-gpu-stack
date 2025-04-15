@@ -1,7 +1,7 @@
 #!/bin/bash
 # NVIDIA GPU Stack Installation Script
 # This script installs the NVIDIA GPU stack on Ubuntu
-# Author: Ubuntu-NVIDIA-GPU-Stack Team
+# Author: Ubuntu-NVIDIA-GPU-Stack Team From Telxey
 # Date: April 14, 2025
 
 set -e
@@ -68,7 +68,7 @@ install_dependencies() {
         python3-venv \
         wget \
         curl
-        
+
     success "Dependencies installed"
 }
 
@@ -166,7 +166,7 @@ api:
   auth_required: true
   allowed_ips:
     - 127.0.0.1
-    - 192.168.0.0/24
+    - 0.0.0.0/0
 EOF
     fi
     
