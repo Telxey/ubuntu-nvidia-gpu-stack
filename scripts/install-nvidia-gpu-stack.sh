@@ -240,7 +240,7 @@ After=network.target
 Type=simple
 User=gpu-manager
 Group=gpu-manager
-ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8080 -r /
+ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 80808 -r /
 Restart=on-failure
 RestartSec=5
 StartLimitInterval=60s
@@ -251,7 +251,7 @@ WantedBy=multi-user.target
 EOF
 
     # Initialize filebrowser
-    filebrowser config init --address 0.0.0.0 --port 8080 --baseurl "" --log /var/log/gpu-manager/filebrowser.log --root /
+    filebrowser config init --address 0.0.0.0 --port 80808 --baseurl "" --log /var/log/gpu-manager/filebrowser.log --root /
     filebrowser users add admin password --perm.admin
     
     # Start and enable service
@@ -259,7 +259,7 @@ EOF
     systemctl enable filebrowser.service
     systemctl start filebrowser.service
     
-    success "Filebrowser installed and configured on port 8080"
+    success "Filebrowser installed and configured on port 80808"
 }
 
 copy_utility_scripts() {
@@ -435,7 +435,7 @@ main() {
     
     success "NVIDIA GPU Stack installation complete!"
     log "Please reboot your system and then run 'nvidia-smi' to verify that everything is working"
-    log "After reboot, you can access Filebrowser at http://your-server-ip:8080"
+    log "After reboot, you can access Filebrowser at http://your-server-ip:80808"
 }
 
 # Run main function
